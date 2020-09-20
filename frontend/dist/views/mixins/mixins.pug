@@ -1,0 +1,28 @@
+//- Item Mixin 
+mixin gridItem( name, atts, itemClass )
+  -let $thisName  = name           || false;
+  -let $thisInx   = atts.index + 1 || '-1';
+  -let $thisLink  = atts.link      || '#';
+  -let $thisText  = atts.text      || false;
+  -let $thisPrice = atts.price     || false;
+  -let $elClass   = itemClass      || 'item';
+  
+  -let $thisSVG = atts.svg || false;
+  -let $thisPNG = atts.url || false;
+  
+  a(tabindex="" +$thisInx class="" +$elClass +"__link" role="link" href="" +$thisLink)
+    if $thisSVG && $thisName
+      i(class="icon svg-common " +$elClass +"__icon svg-" +$thisName +" svg-" +$thisName +"-dims")
+    if $thisPNG
+      picture(class="" +$elClass +"__img-wrapper")
+        //[if IE 9]><video style="display: none;"><![endif]
+        source(srcset="" +$thisPNG)
+        //[if IE 9]></video><![endif]
+        img(src="" +$thisPNG srcset="" +$thisPNG class="img-responsive img-inner" +$elClass +"__img-wrapper__img" alt="" + $thisName +"|" +$thisText title="" +$thisName +"|" +$thisPrice)
+    if $thisName
+      h3(class="" +$elClass +"__title")= $thisName
+    if $thisText
+      p(class="" +$elClass +"__text")= $thisText
+    if $thisPrice
+      p(class="" +$elClass +"__price")= $thisPrice
+        

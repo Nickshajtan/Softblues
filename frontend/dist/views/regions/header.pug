@@ -1,0 +1,27 @@
+-let headerMenu = [];
+-headerMenu.push( {name: 'О компании', link: '#'} );
+-headerMenu.push( {name: 'Галерея', link: '#'} );
+-headerMenu.push( {name: 'Блог', link: '#'} );
+-headerMenu.push( {name: 'Клиенты', link: '#'} );
+      
+header.site-header
+  div.site-header__container
+    nav.site-header__nav(role="navigation")
+      if $logoSrc
+        div.site-header__nav__logo
+          a(role="logo" aria-label="Logo")
+            img(src="" +$logoSrc alt="Logo" title="")
+
+      -if( !isEmpty( headerMenu ) ) {
+      menu.site-header__nav__menu
+      
+        each val, index in headerMenu
+          -let tabindex = index + 1;
+          li(class="site-header__menu__item item-" +index)
+            a.site-header__nav__menu__item__link(role="link" tabindex="" +tabindex href="" +val.link)= val.name
+      -}
+
+      if $phoneNum
+        -let number = $phoneNum.replace(/[^+\d]/g, '');
+        div.site-header__nav__contacts
+          a.site-header__nav__contacts__phone(role="link" href="tel:+38" +number )= $phoneNum

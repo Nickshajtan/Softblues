@@ -1,0 +1,40 @@
+-let footerMenu = [];
+-footerMenu.push( {name: 'О нас', link: '#'} );
+-footerMenu.push( {name: 'Журнал', link: '#'} );
+-footerMenu.push( {name: 'Блог', link: '#'} );
+-footerMenu.push( {name: 'Галерея', link: '#'} );
+-footerMenu.push( {name: 'Контакты', link: '#'} );
+
+footer.site-footer(role="contentinfo")
+  div.site-footer__container
+    nav.site-footer__nav(role="navigation")
+      if $logoSrc
+        div.site-footer__nav__logo
+          a(role="logo" aria-label="Logo")
+            img(src="" +$logoSrc alt="Logo" title="")
+      
+      -if( !isEmpty( footerMenu ) ) {
+      menu.site-footer__nav__menu
+        each val, index in footerMenu
+          -let tabindex = index + 1;
+          li(class="site-footer__menu__item item-" +index)
+            a.site-footer__nav__menu__item__link(role="link" tabindex="" +tabindex href="" +val.link)= val.name
+      -}
+    
+      -let footerSocials = [];
+      -if( !isEmpty( footerSocials ) ) {
+      div.site-footer__nav__socials
+        | Мы в соцсетях
+        ul.site-footer__nav__socials__list
+          li.site-footer__nav__socials__list__item
+            img(class="site-footer__nav__socials__list__item__icon img-inner img-responsive" alt="" title="")
+      -}
+    
+    div.site-footer__copyright
+      div.site-footer__copyright__years
+        | 2015 Все права защищены
+      div.site-footer__copyright__core
+        p
+          | Магазин работает на 
+          a(role="link") 
+            | ImageCMS

@@ -1,0 +1,20 @@
+include ../vars.pug
+include ../mixins/mixins.pug
+doctype html
+html(lang="ru")
+  block head
+    include ../regions/head.pug
+  body
+    block header
+      include ../regions/header.pug
+    block content
+      main(role="main")
+    block footer
+      include ../regions/footer.pug
+  block footer-styles
+    include ../includes/footer-styles.pug
+  block footer-scripts
+    include ../includes/footer-scripts.pug
+  block modals
+    include ../includes/modals.pug
+    
