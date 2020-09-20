@@ -5,6 +5,11 @@
 -footerMenu.push( {name: 'Галерея', link: '#'} );
 -footerMenu.push( {name: 'Контакты', link: '#'} );
 
+-let footerSocials = [];
+-footerSocials.push( {name: 'Twitter', link: '#'} );
+-footerSocials.push( {name: 'Facebook', link: '#'} );
+-footerSocials.push( {name: 'Google+', link: '#'} );
+
 footer.site-footer(role="contentinfo")
   div.site-footer__container
     nav.site-footer__nav(role="navigation")
@@ -21,13 +26,16 @@ footer.site-footer(role="contentinfo")
             a.site-footer__nav__menu__item__link(role="link" tabindex="" +tabindex href="" +val.link)= val.name
       -}
     
-      -let footerSocials = [];
       -if( !isEmpty( footerSocials ) ) {
       div.site-footer__nav__socials
         | Мы в соцсетях
         ul.site-footer__nav__socials__list
-          li.site-footer__nav__socials__list__item
-            img(class="site-footer__nav__socials__list__item__icon img-inner img-responsive" alt="" title="")
+          each val, index in footerSocials
+            li.site-footer__nav__socials__list__item
+              -let href = val.link || '#';
+              a.site-footer__nav__socials__list__item__icon(role="link" aria-label="" +val.name href="" +href target="_blank")
+                -let name = val.name.toLowerCase();
+                i(class="icon icon-" +name)
       -}
     
     div.site-footer__copyright
