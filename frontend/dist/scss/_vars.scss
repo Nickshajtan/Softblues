@@ -9,3 +9,59 @@
 $images-path: "../img";
 $node-path: "../../node_modules";
 $breadcrumb-divider: quote("🡪");
+
+/** Bootstrap root colors var override **/
+$theme-colors: (
+  primary:   blue,
+  secondary: $helper-one,
+  success:   $helper-three,
+  warning:   darken($helper-one, 10%),
+  info:      $helper-two,
+  danger:    red,
+  dark:      $dark,
+  light:     $light,
+);
+/** End of bootstrap colors override **/
+
+/** Bootstrap grid points */
+$grid-breakpoints: (
+  xs:  0,
+  sm:  576px,
+  md:  768px,
+  lg:  992px,
+  xlg: 1024px, // additional custom breakpoint
+  xl:  1230px,
+  xxl: 1400px // additional custom breakpoint
+);
+
+/** Bootstrap z-index variables */
+$zindex-dropdown:          1000 !default;
+$zindex-sticky:            1020 !default;
+$zindex-fixed:             1030 !default;
+$zindex-modal-backdrop:    1040 !default;
+$zindex-modal:             1050 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+/** End Bootstrap z-index variables */
+
+:root {
+   @each $color, $value in $colors {
+    --hcc-color-#{$color}: #{$value};
+   }
+  
+   @each $size, $value in $sizes {
+    --hcc-size-#{$size}: #{$value};
+   }
+  
+   @each $weight, $value in $weights {
+    --hcc-weight-#{$weight}: #{$value};
+   }
+  
+   @each $height, $value in $line-heights {
+    --hcc-line-#{$height}: #{$value};
+   }
+  
+   @each $font, $value in $fonts {
+    --hcc-font-#{$font}: #{$value};
+   }
+}

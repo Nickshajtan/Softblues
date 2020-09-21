@@ -1,5 +1,5 @@
 %svg-common {
-	background: url("../resourses/svg/view/svg/sprite.view.svg") no-repeat;
+	background: url("svg/sprite.view.svg") no-repeat;
 }
 
 .svg-Android {
@@ -52,32 +52,32 @@
 	height: 33px;
 }
 
-.svg-CPlus {
+.svg-cPlus {
 	@extend %svg-common;
 	background-position: 47.014925373134325% 35.922330097087375%;
 }
 
-.svg-CPlus-dims {
+.svg-cPlus-dims {
 	width: 31px;
 	height: 33px;
 }
 
-.svg-CSharp {
+.svg-cSharp {
 	@extend %svg-common;
 	background-position: 75.93984962406014% 0;
 }
 
-.svg-CSharp {
+.svg-cSharp-dims {
 	width: 32px;
 	height: 33px;
 }
 
-.svg-HTML {
+.svg-html5 {
 	@extend %svg-common;
 	background-position: 75.93984962406014% 32.03883495145631%;
 }
 
-.svg-HTML-dims {
+.svg-html5-dims {
 	width: 32px;
 	height: 33px;
 }
@@ -92,92 +92,92 @@
 	height: 33px;
 }
 
-.svg-Java {
+.svg-java {
 	@extend %svg-common;
 	background-position: 38.059701492537314% 100%;
 }
 
-.svg-Java-dims {
+.svg-java-dims {
 	width: 31px;
 	height: 33px;
 }
 
-.svg-JavaScript {
+.svg-javascript {
 	@extend %svg-common;
 	background-position: 45.52238805970149% 67.96116504854369%;
 }
 
-.svg-JavaScript-dims {
+.svg-javascript-dims {
 	width: 31px;
 	height: 33px;
 }
 
-.svg-Node {
+.svg-nodejs {
 	@extend %svg-common;
 	background-position: 67.15328467153284% 67.96116504854369%;
 }
 
-.svg-Node-dims {
+.svg-nodejs-dims {
 	width: 28px;
 	height: 33px;
 }
 
-.svg-PHP {
+.svg-php {
 	@extend %svg-common;
 	background-position: 100% 0;
 }
 
-.svg-PHP-dims {
+.svg-php-dims {
 	width: 32px;
 	height: 33px;
 }
 
-.svg-Python {
+.svg-python {
 	@extend %svg-common;
 	background-position: 100% 32.03883495145631%;
 }
 
-.svg-Python-dims {
+.svg-python-dims {
 	width: 32px;
 	height: 33px;
 }
 
-.svg-React {
+.svg-react {
 	@extend %svg-common;
 	background-position: 0 0;
 }
 
-.svg-React-dims {
+.svg-react-dims {
 	width: 32px;
 	height: 37px;
 }
 
-.svg-Scala {
+.svg-scala {
 	@extend %svg-common;
 	background-position: 0 100%;
 }
 
-.svg-Scala-dims {
+.svg-scala-dims {
 	width: 20px;
 	height: 33px;
 }
 
-.svg-SQL {
+.svg-sql {
 	@extend %svg-common;
 	background-position: 14.925373134328359% 100%;
 }
 
-.svg-SQL-dims {
+.svg-sql-dims {
 	width: 31px;
 	height: 33px;
 }
 
-.svg-Swift {
+.svg-swift {
 	@extend %svg-common;
 	background-position: 100% 64.07766990291262%;
 }
 
-.svg-Swift-dims {
+.svg-swift-dims {
 	width: 32px;
 	height: 33px;
 }

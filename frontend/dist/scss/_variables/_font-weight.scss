@@ -8,3 +8,19 @@ $theme-font-weight: (
   weight-bolder:  700,
   weight-bold:    bold,
 );
+
+$weight-light:   300;
+$weight-lighter: 400;
+$weight-normal:  500;
+$weight-middler: 600;
+$weight-bolder: 700;
+$weight-bold: bold;
+
+$weights: (
+  lights:     $weight-light,
+  lighters:   $weight-lighter,
+  normals:    $weight-normal,
+  middlers:   $weight-middler,
+  bolders:    $weight-bolder,
+  bolds:      $weight-bold,
+);

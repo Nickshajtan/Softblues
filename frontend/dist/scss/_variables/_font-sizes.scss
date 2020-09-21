@@ -7,3 +7,19 @@ $theme-font-sizes: (
   size-middler:  1.3rem,
   size-regular:  14px,
 );
+
+$oversize: 60px;
+$big:     46px;
+$middle:  18px;
+$middler: 16px;
+$regular: 15px;
+$smaller: 13px;
+
+$sizes: (
+  oversizes:  $oversize,
+  bigs:       $big,
+  middles:    $middle,
+  middlers:   $middler,
+  regular:    $regular,
+  smalle:     $smaller,
+);

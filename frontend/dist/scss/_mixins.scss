@@ -32,3 +32,15 @@
 
 /** Icons font **/
 //@import "_mixins/icons";
+
+@mixin container {
+  width: 100%;
+  max-width: 100%;
+  word-break: break-word;
+  
+  @include push--auto;
+  
+  @media screen and (min-width: 1210px) {
+    max-width: 1200px;
+  }
+}

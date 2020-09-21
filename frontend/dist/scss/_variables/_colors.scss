@@ -2,9 +2,10 @@
 $transparent:  transparent;
 $white:        #fff;
 $black:        #000;
-$dark:         #212529;
-$helper-color: #5cbf1a;
-$border-grey:  #acc1da;
+$dark:         #29261f;
+$helper-one:   #ec9f04;
+$helper-two:   #db862a;
+$helper-three: #f7f6f5;
 
 $theme-colors: (
   primary:   blue,
@@ -19,4 +20,19 @@ $theme-colors: (
 $text-colors: (
   light: $white,
   dark:  $dark,
+);
+
+$colorOne:   var(--colorOne, $helper-one);
+$colorTwo:   var(--colorTwo, $helper-two); 
+$colorThree: var(--colorThree, $helper-three);
+$light:      var(--colorThree, $helper-three);
+
+$colors: (
+  whites:  $white,
+  blacks:  $black,
+  darks:   $dark,
+  lightes: $light,
+  helper-one:   $colorOne,
+  helper-two:   $colorTwo,
+  helper-three: $colorThree,
 );

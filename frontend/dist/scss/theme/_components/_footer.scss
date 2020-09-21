@@ -1,0 +1,32 @@
+.site-footer {
+  padding: 45px 0;
+  
+  @include bg--auto($dark, none, cover, no-repeat, overlay);
+  
+  &__container {
+    padding: 0 15px;
+    
+    @include container;
+    @include mq('laptop', min) {
+      padding: 0;
+    }
+  }
+  
+  &__copyright {
+    padding-top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    @include font-source-sans($middler, $white, 400,  1, inherit);
+  }
+  
+  a{
+    color: $colorOne;
+    
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}

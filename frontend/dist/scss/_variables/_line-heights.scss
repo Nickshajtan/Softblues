@@ -6,3 +6,15 @@ $theme-line-heights: (
   line-middle:  1.3,
   line-larger:  56px,
 );
+
+$line-normal: 1;
+$line-middler: 36px;
+$line-middle:  43px;
+$line-larger:  51px;
+
+$line-heights: (
+  normals:   $line-normal,
+  middlers:  $line-middler,
+  middles:   $line-middle,
+  largers:   $line-larger,
+);

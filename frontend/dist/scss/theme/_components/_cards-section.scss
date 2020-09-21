@@ -1,0 +1,117 @@
+$text-color: transparentize( lighten( $dark, 25% ), .1 );
+
+.cards-section {
+  padding: 68px 0 90px 0;
+  
+  @include mq('extra-tablet', min) {
+    padding-bottom: 190px;
+  }
+  
+  &__container {
+    padding: 0 15px;
+    
+    @include container;
+    @include mq('laptop', min) {
+      padding: 0;
+    }
+  }
+  
+  &__title-block {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
+    
+    @include font-source-sans($big, $black, 600,  1.5, $main-font);
+  }
+  
+  &__description-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin-bottom: 40px;
+    
+    @include push--auto;
+    
+    &,
+    * {
+      text-align: center;
+    
+      @include font-source-sans($middler, $text-color, 400,  1.8, $main-font);
+    }
+  }
+  
+  &__content {
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  
+  .cards-list {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 21px;
+    
+    @include mq('tablet', min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mq('laptop', min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__card {
+      border: 1px solid transparentize( lighten( $dark, 40% ), .7 );
+      background-color: $white;
+      padding: 26px 21px;
+      padding-top: 0;
+      border-top-color: transparent;
+      box-sizing: border-box;
+      transition: 0.3s;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      margin-bottom: 21px;
+      
+      @include mq('laptop', min) {
+        margin-bottom: 0;
+      }
+      
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+      
+      &__img-wrapper {
+        display: block;
+        position: relative;
+        margin: 0 -21px;
+        
+        &__img {
+          object-position: center;
+          object-fit: contain;
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+          position: absolute;
+        }
+      }
+      
+      &__title {
+        margin: 18px 0 10px 0;
+        
+        @include font-source-sans($middle, $black, 600,  1.5, $main-font);
+      }
+      
+      &__text {
+        @include font-source-sans($middler, $text-color, 400,  1.8, $main-font);
+      }
+      
+      &__price {
+        margin-top: 10px;
+        
+        @include font-source-sans($middle, $colorTwo, 600,  1, $main-font);
+      }
+    }
+  }
+}

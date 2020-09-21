@@ -8,8 +8,7 @@
 		<title>Test task for Softblues</title>
 		<link rel="stylesheet" href="./css/head-styles.min.css">
 		<link rel="stylesheet" href="./fonts/fonts.min.css">
-		<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,400&amp;display=swap">
 		<script src="./js/head.min.js"></script>
 	</head>
 	<body>
@@ -28,37 +27,67 @@
 		</header>
 		<main role="main">
 			<section class="head-section">
-				<div class="head-section__container head-section__container_fill-bg" role="region"><small>
-						 Наши плюсы</small>
-					<h1 class="title-block">Профессионализм и лучшие цены</h1>
-					<div class="description-block">Мы онлайн-сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения крупнейших страховых компаний.</div>
-					<div><a role="link" href="#">Написать нам</a><a role="link" href="#">Читать дальше</a></div>
+				<div class="head-section__container head-section__container_fill-bg" role="region">
+					<div class="head-section__banner"><small class="head-section__banner__additional-text">Наши плюсы</small>
+						<h1 class="head-section__banner__title-block">Профессионализм и лучшие цены</h1>
+						<div class="head-section__banner__description-block">
+							<p>Мы онлайн-сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения крупнейших страховых компаний.</p>
+						</div>
+						<div class="head-section__banner__button-block"><a class="head-section__banner__button-block__btn head-section__banner__button-block__btn" role="link" href="#">Написать нам</a><a class="head-section__banner__button-block__btn_btn-fill" role="link" href="#">Читать дальше</a></div>
+						<picture class="head-section__banner__img">
+							<!--[if IE 9]><video style="display: none;"><![endif]-->
+							<source srcset="./img/banner.png">
+							<!--[if IE 9]></video><![endif]--><img class="img-responsive img-inner./img/banner.png" src="./img/banner.png" srcset="./img/banner.png" alt="" title="">
+						</picture>
+					</div>
 				</div>
 			</section>
 			<section class="cards-section">
 				<div class="cards-section__container" role="region">
-					<h2 class="title-block">Горячие туры</h2>
-					<div class="description-block">Мы онлайн сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения.</div>
+					<h2 class="cards-section__title-block">Горячие туры</h2>
+					<div class="cards-section__description-block">
+						<p>Мы онлайн сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения.</p>
+					</div>
 					<ul class="cards-list cards-section__content" role="complementary">
-						<li class="cards-list__card card-0 card-Египет card" role="article"><a class="card__link" tabindex="1" role="link" href="#">
-								<h3 class="card__title">Египет</h3>
-								<p class="card__text">Это город, в котором королевские резиденции</p>
-								<p class="card__price">$2600</p></a>
+						<li class="cards-list__card card-0 card-Египет cards-list__card" role="article"><a class="cards-list__card__link" tabindex="1" role="link" href="#">
+								<picture class="cards-list__card__img-wrapper">
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="./img/cards/1.png"/>
+									<!--[if IE 9]></video><![endif]--><img class="img-responsive img-innercards-list__card__img-wrapper__img" src="./img/cards/1.png" srcset="./img/cards/1.png" alt="Египет|Это город, в котором королевские резиденции" title="Египет|$2600"/>
+								</picture>
+								<h3 class="cards-list__card__title">Египет</h3>
+								<p class="cards-list__card__text">Это город, в котором королевские резиденции</p>
+								<p class="cards-list__card__price">$2600</p></a>
 						</li>
-						<li class="cards-list__card card-1 card-Китай card" role="article"><a class="card__link" tabindex="2" role="link" href="#">
-								<h3 class="card__title">Китай</h3>
-								<p class="card__text">Это город, в котором королевские резиденции</p>
-								<p class="card__price">$6800</p></a>
+						<li class="cards-list__card card-1 card-Китай cards-list__card" role="article"><a class="cards-list__card__link" tabindex="2" role="link" href="#">
+								<picture class="cards-list__card__img-wrapper">
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="./img/cards/2.png"/>
+									<!--[if IE 9]></video><![endif]--><img class="img-responsive img-innercards-list__card__img-wrapper__img" src="./img/cards/2.png" srcset="./img/cards/2.png" alt="Китай|Это город, в котором королевские резиденции" title="Китай|$6800"/>
+								</picture>
+								<h3 class="cards-list__card__title">Китай</h3>
+								<p class="cards-list__card__text">Это город, в котором королевские резиденции</p>
+								<p class="cards-list__card__price">$6800</p></a>
 						</li>
-						<li class="cards-list__card card-2 card-Кипр card" role="article"><a class="card__link" tabindex="3" role="link" href="#">
-								<h3 class="card__title">Кипр</h3>
-								<p class="card__text">Это город, в котором королевские резиденции</p>
-								<p class="card__price">$2400</p></a>
+						<li class="cards-list__card card-2 card-Кипр cards-list__card" role="article"><a class="cards-list__card__link" tabindex="3" role="link" href="#">
+								<picture class="cards-list__card__img-wrapper">
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="./img/cards/3.png"/>
+									<!--[if IE 9]></video><![endif]--><img class="img-responsive img-innercards-list__card__img-wrapper__img" src="./img/cards/3.png" srcset="./img/cards/3.png" alt="Кипр|Это город, в котором королевские резиденции" title="Кипр|$2400"/>
+								</picture>
+								<h3 class="cards-list__card__title">Кипр</h3>
+								<p class="cards-list__card__text">Это город, в котором королевские резиденции</p>
+								<p class="cards-list__card__price">$2400</p></a>
 						</li>
-						<li class="cards-list__card card-3 card-Болгария card" role="article"><a class="card__link" tabindex="4" role="link" href="#">
-								<h3 class="card__title">Болгария</h3>
-								<p class="card__text">Это город, в котором королевские резиденции</p>
-								<p class="card__price">$1400</p></a>
+						<li class="cards-list__card card-3 card-Болгария cards-list__card" role="article"><a class="cards-list__card__link" tabindex="4" role="link" href="#">
+								<picture class="cards-list__card__img-wrapper">
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="./img/cards/4.png"/>
+									<!--[if IE 9]></video><![endif]--><img class="img-responsive img-innercards-list__card__img-wrapper__img" src="./img/cards/4.png" srcset="./img/cards/4.png" alt="Болгария|Это город, в котором королевские резиденции" title="Болгария|$1400"/>
+								</picture>
+								<h3 class="cards-list__card__title">Болгария</h3>
+								<p class="cards-list__card__text">Это город, в котором королевские резиденции</p>
+								<p class="cards-list__card__price">$1400</p></a>
 						</li>
 					</ul>
 				</div>
@@ -88,7 +117,7 @@
 				<div class="site-footer__copyright">
 					<div class="site-footer__copyright__years">2015 Все права защищены</div>
 					<div class="site-footer__copyright__core">
-						<p>Магазин работает на <a role="link">
+						<p>Магазин работает на <a role="link" href="#">
 								 ImageCMS</a></p>
 					</div>
 				</div>

@@ -1,25 +1,26 @@
 -let cardList = [];
--let pngPath  = '';
+-let pngPath  = './img/cards/';
 -let svgPath  = '';
 
--cardList.push( {name: 'Египет', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath, svg: svgPath, price: '$2600', link: '#' }} );
--cardList.push( {name: 'Китай', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath, svg: svgPath, price: '$6800', link: '#' }} );
--cardList.push( {name: 'Кипр', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath, svg: svgPath, price: '$2400', link: '#' }} );
--cardList.push( {name: 'Болгария', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath, svg: svgPath, price: '$1400', link: '#' }} );
+-cardList.push( {name: 'Египет', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath + '1.png', svg: svgPath, price: '$2600', link: '#' }} );
+-cardList.push( {name: 'Китай', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath + '2.png', svg: svgPath, price: '$6800', link: '#' }} );
+-cardList.push( {name: 'Кипр', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath + '3.png', svg: svgPath, price: '$2400', link: '#' }} );
+-cardList.push( {name: 'Болгария', atts: { text: 'Это город, в котором королевские резиденции', url: pngPath + '4.png', svg: svgPath, price: '$1400', link: '#' }} );
     
 section.cards-section
   div.cards-section__container(role="region")
-    h2.title-block
+    h2.cards-section__title-block
       | Горячие туры
-    div.description-block
-      | Мы онлайн сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения.
+    div.cards-section__description-block
+      p
+        | Мы онлайн сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения.
       
     -if( !isEmpty( cardList ) ) {
     ul.cards-list.cards-section__content(role="complementary")
       each val, index in cardList
         -let valAtts      = val.atts;
         -valAtts['index'] = index;
-        -let itemClass    = 'card';
+        -let itemClass    = 'cards-list__card';
 
         li(role="article" class="cards-list__card card-" +index + ' card-' +val.name + ' ' +itemClass)
           +gridItem(val.name, valAtts, itemClass)

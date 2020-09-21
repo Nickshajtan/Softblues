@@ -1,12 +1,32 @@
-body {
-  ul {
-    margin: 0;
-    padding-left: 0;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  font-family: $main-font;
 }
 
-@media (min-width: 1200px) {
-  .container {
-      max-width: 1210px;
-  }
+ul,
+ol,
+menu {
+  margin: 0;
+  padding-left: 0;
+}
+
+menu>li,
+ul>li {
+  list-style: none;
+}
+a {
+  transition: .3s;  
+}
+
+a,
+a:visited {
+  color: $dark;
+}
+
+a:hover,
+a:focus {
+  color: $colorOne;
 }

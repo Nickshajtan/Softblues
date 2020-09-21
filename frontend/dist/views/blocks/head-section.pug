@@ -1,13 +1,21 @@
+-let banner = './img/banner.png';
 section.head-section
   div.head-section__container.head-section__container_fill-bg(role="region")
-    small 
-      | Наши плюсы
-    h1.title-block
-      | Профессионализм и лучшие цены
-    div.description-block
-      | Мы онлайн-сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения крупнейших страховых компаний.
-    div
-      a(role="link" href="#")
-        | Написать нам
-      a(role="link" href="#")
-        | Читать дальше
+    div.head-section__banner
+      small.head-section__banner__additional-text
+        | Наши плюсы
+      h1.head-section__banner__title-block
+        | Профессионализм и лучшие цены
+      div.head-section__banner__description-block
+        p
+          | Мы онлайн-сервис по выбору и покупке страховки для путешествия. Он помогает подобрать оптимальный вариант страхования, сравнить предложения крупнейших страховых компаний.
+      div.head-section__banner__button-block
+        a(role="link" href="#" class="head-section__banner__button-block__btn head-section__banner__button-block__btn")
+          | Написать нам
+        a(role="link" href="#" class="head-section__banner__button-block__btn_btn-fill")
+          | Читать дальше
+      picture.head-section__banner__img
+          //[if IE 9]><video style="display: none;"><![endif]
+          source(srcset="" +banner)
+          //[if IE 9]></video><![endif]
+          img(src="" +banner srcset="" +banner class="img-responsive img-inner"  +banner alt="" title="")
