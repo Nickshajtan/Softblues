@@ -82,6 +82,11 @@ $text-color: transparentize( lighten( $dark, 25% ), .1 );
         transform: scale(1.1);
       }
       
+      &__link {
+        height: 100%;
+        width: 100%;
+      }
+      
       &__img-wrapper {
         display: block;
         position: relative;

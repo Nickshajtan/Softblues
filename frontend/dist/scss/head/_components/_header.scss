@@ -12,5 +12,95 @@
     @include mq('laptop', min) {
       padding: 0;
     }
-  }  
+  }
+  
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 0;
+    
+    @include mq('laptop', min) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+    
+    &__logo {
+      @extend %brand;
+    }
+    
+    &__menu {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding-top: 20px;
+      
+      @include mq('laptop', min) {
+        flex-direction: row;
+        padding-top: 0;
+      }
+      
+      li {
+        a {
+          padding: 5px 35px;
+          text-transform: uppercase;
+          display: block;
+          text-align: center;
+          
+          @include font-source-sans($smaller, $white, 600,  1, $main-font);
+          @include mq('laptop', min) {
+            padding: 35px;
+            
+            &:after {
+              content: '';
+              position: relative;
+              display: block;
+              top: 0;
+              height: 2px;
+              width: 0;
+              background-color: $colorTwo;
+              transition: all .3s ease-out;
+            }
+
+            &:hover,
+            &:focus {
+              color: $white;
+
+              &:after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    &__contacts {
+      &__phone {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        
+        @include font-source-sans($middler, $white, 600,  1, $main-font);
+        @include mq('laptop', min) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  
+  a {
+    &,
+    &:visited {
+      color: $white;
+    }
+    
+    &:hover,
+    &:focus {
+      color: $colorOne;
+    }
+  }
 }

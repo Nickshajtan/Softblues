@@ -8,7 +8,7 @@
 -let footerSocials = [];
 -footerSocials.push( {name: 'Twitter', link: '#'} );
 -footerSocials.push( {name: 'Facebook', link: '#'} );
--footerSocials.push( {name: 'Google+', link: '#'} );
+-footerSocials.push( {name: 'Google', link: '#'} );
 
 footer.site-footer(role="contentinfo")
   div.site-footer__container
@@ -16,7 +16,10 @@ footer.site-footer(role="contentinfo")
       if $logoSrc
         div.site-footer__nav__logo
           a(role="logo" aria-label="Logo")
-            img(src="" +$logoSrc alt="Logo" title="")
+            img(src="" +$logoSrc alt="Logo" title="" class="img-inner img-responsive")
+      else
+        if $logoText
+          div.site-footer__nav__logo !{$logoText}
       
       -if( !isEmpty( footerMenu ) ) {
       menu.site-footer__nav__menu

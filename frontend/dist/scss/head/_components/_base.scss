@@ -19,18 +19,29 @@ section{
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  min-width: 230px;
+  
+  @include mq('tablet', min) {
+    min-width: 0;
+  }
   
   &,
   &:visited {
     font-size: $middler;
     font-weight: 700;
 
-    @include rounded--button($white, 3px, relative, $colorTwo, 12px 40px);
+    @include rounded--button($white, 3px, relative, $colorTwo, 12px 20px);
+    @include mq('laptop', min) {
+      padding: 12px 40px;
+    }
   }
   
   &:hover,
   &:focus {
-    @include rounded--button($colorTwo, 3px, relative, $transparent, 12px 40px);
+    @include rounded--button($colorTwo, 3px, relative, $transparent, 12px 20px);
+    @include mq('laptop', min) {
+      padding: 12px 40px;
+    }
   }
 }
 
@@ -47,5 +58,25 @@ section{
   &:focus {
     background-color: $colorTwo;
     color: $white;
+  }
+}
+
+%brand {
+  @include font-source-sans($middle + 3px, $white, bold,  1, inherit);  
+  
+  span {
+    color: $colorOne;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 30px;
+    object-fit: contain;
+    margin: -5px 0;
+    max-width: 120px;
+    display: block;
+    
+    @include push--auto;
   }
 }

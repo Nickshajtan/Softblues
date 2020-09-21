@@ -1,7 +1,7 @@
 .head-section {
   padding: 200px 0 150px 0;
   background-attachment: fixed;
-  border-top: solid 2px $colorTwo;
+  border-top: solid 3px $colorTwo;
 
   @include bg--auto(transparent, url( $images-path + "/bg.png" ), cover, no-repeat, overlay);
   
@@ -19,39 +19,58 @@
   }
   
   &__banner {
-    padding: 50px 55px;
+    padding: 25px 15px;
     display: grid;
-    grid-template-areas: 'small-text small-text'
-                         'title-text image'
-                         'desc-text image'
-                         'buttons image';
     grid-template-rows: auto;
     grid-auto-rows: max-content;
     grid-auto-columns: auto;
-    grid-template-columns: 1.7fr 1fr;
+    grid-template-columns: 1fr;
     grid-auto-flow: row dense;
     grid-column-gap: 40px;
+    
+    @include mq('tablet', min) {
+      padding: 50px 15px;
+      grid-template-columns: 1.7fr 1fr;
+      grid-template-areas: 'small-text small-text'
+                         'title-text image'
+                         'desc-text image'
+                         'buttons image';
+    }
+    @include mq('laptop', min) {
+      padding: 50px 55px;
+    }
     
     &__additional-text {
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 12px;
-      grid-area: small-text;
       
+      @include mq('tablet', min) {
+        grid-area: small-text;
+      }
       @include font-source-sans($regular - 1px, $black, 700,  1, $main-font);
     }
     
     &__title-block {
       margin: 0 -3px;
       text-transform: uppercase;
-      grid-area: title-text;
       
-      @include font-source-sans($oversize, $colorTwo, 700,  1.15, $main-font);
+      @include font-source-sans($middle+3px, $colorTwo, 700,  1.15, $main-font);
+      @include mq('tablet', min) {
+        grid-area: title-text;
+        font-size: $oversize/2;
+      }
+      @include mq('laptop', min) {
+        font-size: $oversize;
+      }
     }
     
     &__description-block {
-      grid-area: desc-text;
       margin: 14px 0 28px 0;
+      
+      @include mq('tablet', min) {
+        grid-area: desc-text;
+      }
       
       &,
       * {
@@ -60,25 +79,55 @@
     }
     
     &__button-block {
-      grid-area: buttons;
+      
+      @include mq('tablet', min) {
+        grid-area: buttons;
+      }
       
       &__btn {
-        @extend %btn;
+        text-align: center;
+        display: block;
+        margin-bottom: 15px;
         
-        &:not(:last-child) {
-          margin-right: 25px;
+        @include push--auto;
+        @extend %btn;
+        @include mq('tablet', min) {
+          margin-bottom: 0;
+          margin-left: 0;
+          margin-right: 0;
+          display: inline-flex;
+          
+          &:not(:last-child) {
+            margin-right: 25px;
+          }
         }
         
         &_btn-fill {
+          text-align: center;
+          display: block;
+          
+          @include push--auto;
           @extend %btn_fill; 
+          
+          @include mq('tablet', min) {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            display: inline-flex;
+          }
         }
       }
     }
     
     &__img {
-      grid-area: image;
+      display: none;
       margin-top: 15px;
       position: relative;
+      
+      @include mq('tablet', min) {
+        grid-area: image;
+        display: block;
+      }
       
       img {
         width: 100%;

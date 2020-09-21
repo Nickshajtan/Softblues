@@ -10,7 +10,10 @@ header.site-header
       if $logoSrc
         div.site-header__nav__logo
           a(role="logo" aria-label="Logo")
-            img(src="" +$logoSrc alt="Logo" title="")
+            img(src="" +$logoSrc alt="Logo" title="" class="img-inner img-responsive")
+      else
+        if $logoText
+          div.site-header__nav__logo !{$logoText}
 
       -if( !isEmpty( headerMenu ) ) {
       menu.site-header__nav__menu
