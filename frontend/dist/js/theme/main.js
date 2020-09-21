@@ -19,6 +19,45 @@ document.addEventListener("DOMContentLoaded", function() {
     this.classList.remove('is-active');
   };
   
+  const forms = document.querySelectorAll('.modal-form form');
+  for (let el of forms) {
+    const message = el.querySelector('.message-text');
+    el.addEventListener('submit', function(e){
+      e.preventDefault();
+      let data = new FormData(el);
+      let xhr  = new XMLHttpRequest();
+      xhr.open('POST', 'http://example.com', true);
+      xhr.send(data);
+      xhr.ontimeout = function() {
+          message.innerText = 'Статус отправки ' + xhr.status + ': ' + xhr.statusText;
+      }
+      xhr.onreadystatechange = function() {
+        if (xhr.status != 200) {
+          message.innerText = 'Статус отправки ' + xhr.status + ': ' + xhr.statusText;
+        } 
+        else {
+          message.innerText = 'Статус отправки ' + xhr.status + ': ' + xhr.responseText;
+        }
+      }
+      xhr.onerror = function() {
+        message.innerText = 'Ошибка! ' + xhr.status + ': ' + xhr.responseText;
+      }
+      xhr.ontimeout = function() {
+        message.innerText = 'Извините, запрос превысил максимальное время. ' + xhr.status + ': ' + xhr.responseText;
+      }
+      xhr.onload = function() {
+        message.innerText = 'Сообщение успешно отправлено.';
+        let inputs = el.querySelectorAll('input');
+        for (let el of inputs) {
+          el.value = "";
+        }
+        let textareas = el.querySelectorAll('textarea');
+        for (let el of textareas) {
+          el.innerText = "";
+        }
+      }
+    });
+  }
 });
 
 function  modalLinks() {
