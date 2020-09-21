@@ -1,0 +1,26 @@
+div.modal-form
+  div.modal-form__modal-wrapper
+    div.modal-form__modal-closer
+    div.modal-form__modal-body
+      form(action="" method="POST" name="modal-form" enctype="text/plain")
+        fieldset.modal-form__modal-body__block
+          div.modal-form__modal-body__block__title-box
+            legend.modal-form__modal-body__modal-title
+              | Связь с нами
+            p.modal-form__modal-body__modal-text
+              | Мы работаем напрямую с крупнейшими мировыми
+          div.modal-form__modal-body__block__data-box
+            label(for="name" class="sr-only")
+              | Имя
+            input(id="name" name="name" type="text" placeholder="Имя" aria-label="Имя" required="required" tabindex="1" minlength="3" maxlength="25")
+          div.modal-form__modal-body__block__data-box
+            label(for="email" class="sr-only")
+              | E-mail
+            input(id="email" name="email" type="email" placeholder="E-mail" aria-label="E-mail" required="required" tabindex="2" minlength="5" maxlength="25")
+          div.modal-form__modal-body__block__data-box.modal-form__modal-body__block__data-box_w-100
+            label(for="message" class="sr-only")
+              | Ваше сообщение
+            textarea(id="message" name="message" placeholder="Ваше сообщение" aria-label="Ваше сообщение" rows="5" required="required" wrap="soft" tabindex="3" cols="5")
+          div.modal-form__modal-body__block__data-box
+            input(type="submit" placeholder="Отправить" aria-label="Отправить" tabindex="4")
+      

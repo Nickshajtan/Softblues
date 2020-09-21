@@ -1,0 +1,99 @@
+.modal-form {
+  position: relative;
+  
+  &__modal-wrapper {
+    @extend .overlay;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+  }
+  
+  &__modal-body {
+    background-color: $white;
+    position: relative;
+    border: none;
+    padding: 50px 38px;
+    max-width: 100%;
+    
+    @include mq('laptop', min) {
+      max-width: 650px;
+    }
+    
+    &__modal-title {
+      width: 100%;
+      
+      @include font-source-sans($big, $black, 600,  1.5, $main-font);
+    }
+    
+    &__modal-text {
+      margin-bottom: 30px;
+      
+      @include font-source-sans($regular, transparentize( lighten( $dark, 25% ), .1 ), 600,  1.8, $main-font);
+    }
+    
+    &__block {
+      &__title-box {
+        padding: 0 11px;
+      }
+      
+      &__data-box {
+        padding: 11px;
+        width: 50%;
+        float: left;
+      
+        &_w-100 {
+          width: 100%;
+        }
+      }
+    }
+    
+    fieldset {
+      padding: 0;
+      border: none;
+    }
+    
+    input:not([type="submit"]){
+      height: 50px;
+      padding: 18px 20px 17px 20px;
+    }
+    
+    input:not([type="submit"]),
+    textarea {
+      width: 100%;
+      border: transparentize( lighten( $dark, 25% ), .6 ) solid 1px;
+      font-size: $regular;
+      font-family: $main-font;
+      color: $dark;
+      font-weight: 600;
+      border-radius: 5px;
+      
+      &:hover,
+      &:focus {
+        border-color: $colorTwo;
+      }
+    }
+    
+    textarea {
+      padding: 0;
+      padding: 18px 20px;
+      max-width: 100%;
+    }
+    
+    [type="submit"] {
+      @extend %btn;
+      
+      cursor: pointer;
+      border-color: $colorOne;
+      background-color: $colorOne;
+      color: $white;
+      
+      &:hover,
+      &:focus {
+        border-color: $colorOne;
+        color: $colorOne;
+      }
+    }
+  }
+}

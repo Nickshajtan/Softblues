@@ -7,6 +7,7 @@
   
   &__container {
     padding: 0 15px;
+    position: relative;
     
     @include container;
     @include mq('laptop', min) {
@@ -14,14 +15,77 @@
     }
   }
   
-  &__nav {
+  &__burger-switcher {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
     display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    
+    @include mq('laptop', min) {
+      display: none;
+    }
+    
+    span,
+    &::after,
+    &::before {
+      height: 2px;
+      width: 75%;
+      border-radius: 1px;
+      display: block;
+      background-color: $white;
+      transition: .3s;
+    }
+    
+    &::before {
+      content: '';
+      width: 90%;
+    }
+
+    &::after {
+      content: '';
+      width: 60%;
+    }
+    
+    &.is-active {
+      span {
+        display: none;
+      }
+      
+      &::after,
+      &::before {
+        width: 90%;
+        position: absolute;
+        top: 30px;
+      }
+      
+      &::before {
+        left: 3px;
+        transform: rotate(45deg);
+      }
+      
+      &::after {
+        right: 3px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  
+  &__nav {
+    display: none;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     padding: 25px 0;
     
     @include mq('laptop', min) {
+      display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -58,7 +122,7 @@
               content: '';
               position: relative;
               display: block;
-              top: 0;
+              top: 3px;
               height: 2px;
               width: 0;
               background-color: $colorTwo;
