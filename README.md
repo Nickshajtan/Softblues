@@ -14,3 +14,5 @@ Create a simple WP plugin via test task.
 Implement PSD design to HTML/CSS files.
 Dist directory is dir for development files, public dir for output result files.
 Gulp folder is directory for gulp 4 common js modules.
+
+[SEE IT ON GITHUB PAGES](/frontend/public/index.html)
