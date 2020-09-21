@@ -27,6 +27,7 @@
     align-items: flex-end;
     flex-direction: column;
     cursor: pointer;
+    z-index: 65;
     
     @include mq('laptop', min) {
       display: none;
@@ -78,14 +79,14 @@
   }
   
   &__nav {
-    display: none;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     padding: 25px 0;
     
     @include mq('laptop', min) {
-      display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -97,26 +98,40 @@
     }
     
     &__menu {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
-      flex-direction: column;
+      flex-direction: column; 
       padding-top: 20px;
       
+      &.is-active {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        background: $black;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        padding: 50px 15px;
+        top: 3px;
+        border-bottom: solid 3px $colorTwo;
+      }
+      
       @include mq('laptop', min) {
+        display: flex;
         flex-direction: row;
         padding-top: 0;
       }
       
       li {
         a {
-          padding: 5px 35px;
+          padding: 35px;
           text-transform: uppercase;
           display: block;
           text-align: center;
           
-          @include font-source-sans($smaller, $white, 600,  1, $main-font);
+          @include font-source-sans($smaller * 2, $white, 600,  1, $main-font);
           @include mq('laptop', min) {
-            padding: 35px;
+            font-size: $smaller;
             
             &:after {
               content: '';

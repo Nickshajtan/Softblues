@@ -1,5 +1,10 @@
 .modal-form {
   position: relative;
+  display: none;
+  
+  &.is-active {
+    display: flex;
+  }
   
   &__modal-wrapper {
     @extend .overlay;
@@ -7,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: scroll;
+    overflow-y: scroll;  
   }
   
   &__modal-closer {
